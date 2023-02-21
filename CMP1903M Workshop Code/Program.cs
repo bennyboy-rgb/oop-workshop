@@ -30,7 +30,7 @@ namespace CMP1903MWorkshopCode
             Console.WriteLine("the remainder is " +remainder());
             Console.WriteLine("the length of the string is :"+name("school of computing"));
             Console.WriteLine("the best divisor is : "+bestdivisor());
-            Console.WriteLine(fibonacci));
+            Console.WriteLine(fibonacci());   
         }
         static int Method(int x1, int x2, int y1, int y2)
         {
@@ -84,19 +84,33 @@ namespace CMP1903MWorkshopCode
                 }
             }return sum;
         }
-        static int fibonacci(int n)
+        static int fibonacci()
         {
-           // for (int i=0; i<=4000000;i++ ) { 
-             //   if ()
+            // for (int i=0; i<=4000000;i++ ) { 
+            //   if ()
             //}
-          if (n ==0 || n == 1)
+            //if (n ==0 || n == 1)
+            //  {
+            //      return n;
+            //  }
+            //else
+            //  {
+            //      return fibonacci(n -1) +fibonacci(n-2);
+            //  }
+           int  sum = 0;
+            List<int> fibonacciSequence = new List<int> { 0, 1 };
+            for (int i = 2; i < 34; i++)
             {
-                return n;
+                int nextNumber = fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
+                fibonacciSequence.Add(nextNumber);
+
+                if (nextNumber%2 == 0)
+                {
+                    sum += nextNumber;
+                }
             }
-          else
-            {
-                return fibonacci(n -1) +fibonacci(n-2);
-            }
+            
+            return sum;
         }
     }
 }
