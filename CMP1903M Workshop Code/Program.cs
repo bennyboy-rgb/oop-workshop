@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Metrics;
 
 namespace CMP1903MWorkshopCode
 {
@@ -8,7 +9,42 @@ namespace CMP1903MWorkshopCode
         {
             //Week 4
             //Challenge:  Determine what the value of the accumulator will be when the code is finished running
-            //
+            string[] code = File.ReadAllLines("C:/Users/Computing/Downloads/Week 4 Codes.txt");
+
+            int increment = 0;
+            int accumulator = 0;
+            for (int i = 0; i < code.Length; i += increment)
+            {
+                string[] instructionParts = code[i].Split(' ');
+                string op = instructionParts[0];
+                int operand = Convert.ToInt32(instructionParts[1]);
+
+                if (op == "acc")
+                {
+                    accumulator += operand;
+                    increment = 1;
+                }
+                else if (op == "jmp")
+                {
+                    increment = operand;
+                }
+                else if (op == "nop")
+                {
+                    increment = 1;
+                }
+
+                //Console.WriteLine(code[i]);
+            }
+            //Console.WriteLine(accumulator);
+
+            int sum = 0;
+            for (int i = 0; i < 1000; i++)
+            {
+                if (i % 3 == 0 || i % 5 == 0)
+                    sum += i; 
+
+            }
+            
             //Read each line of the input.
             //Determine whether it is a 'acc' or 'jmp' command for each line
             //Determine the value on each line
