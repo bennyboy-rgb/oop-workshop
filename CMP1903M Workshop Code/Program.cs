@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMP1903M_Workshop_Code;
+using System;
 
 namespace CMP1903MWorkshopCode
 {
@@ -20,13 +21,13 @@ namespace CMP1903MWorkshopCode
             //example of creating a page with a title and URL
             //Test... remove this when you have seen it working
             Page p = new Page("Test Page", "http://www.lincoln.ac.uk");
-            Console.WriteLine(p.Address);
+            //Console.WriteLine(p.Address);
             //.......
 
             //creating a new, empty history
             History h1 = new History();
 
-
+          wordsearch newword = new wordsearch();
         }
     }
 }
